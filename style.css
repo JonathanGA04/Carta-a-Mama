@@ -1,0 +1,104 @@
+
+*{
+    font-family: "Comic Neue", cursive;
+}
+body{
+    background-color: #fad7df;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.conteiner{
+    position: relative;
+}
+
+.cover{
+    position: absolute;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 100px solid #fe3334;
+    border-bottom: 100px solid transparent;
+
+    
+    transition: transform, .75s;
+    transform-origin: top;
+
+}
+.paper{
+    position: absolute;
+   p{
+    padding: 1rem;
+   }
+    z-index: -1;
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    transition: all, .75;
+
+}
+
+.letter{
+    border-radius: 2px;
+    border-left: 200px solid #ff989e;
+    border-right: 200px solid #ff989e;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #ff858a;
+}
+.option{
+    display: flex;
+    gap: 5rem;
+
+    button{
+        color: #fe3334;
+        font-weight: 600;
+        border-radius: 7px;
+        padding: 0.5rem 1rem;
+        border: 1px solid #fe3334;
+        cursor: pointer;
+    }
+
+    & button:hover{
+        background-color: #ff989e;
+        color: white;
+    }
+}
+
+.open-cover{
+    transform: rotateX(180deg);
+}
+
+.open-paper{
+    animation: movePaper .5s forwards;
+}
+
+@keyframes movePaper{
+    0%{ 
+        top: 0;
+    }
+    100%{
+        top: -100px;
+    }
+
+}
+
+.close-paper{
+    animation: closePaper .5s forwards;
+}
+
+@keyframes closePaper{
+    0%{ 
+        top: -100px;
+    }
+    100%{
+        top: 0;
+    }
+
+}
